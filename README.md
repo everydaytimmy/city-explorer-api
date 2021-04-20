@@ -1,3 +1,4 @@
+
 # city-explorer-api
 
 **Author**: Timothy Viccari
@@ -10,7 +11,8 @@ This is a custom API server, which will provide data for the City Explorer front
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+![Screen Shot 2021-04-20 at 4 49 45 PM](https://user-images.githubusercontent.com/45111611/115462276-757cb300-a1f8-11eb-94c0-3183bcc0adbe.png)
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
