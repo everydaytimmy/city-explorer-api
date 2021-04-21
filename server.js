@@ -3,9 +3,7 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
-
 const app = express();
-
 const weather = require('./data/weather.json');
 
 app.use(cors());
@@ -19,13 +17,15 @@ app.get('/', (request, response) => {
 });
 
 app.get('/weather', (request, response) => {
-  response.send(weather);
+  const weatherArray = weather.data.map(day => new Forecast(day));
+  response.send(weatherArray);
 });
 
 function Forecast(day) {
   this.date = day.valid_date;
   this.description = day.weather.description;
-
 }
+
+
 
 
