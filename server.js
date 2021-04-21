@@ -12,6 +12,7 @@ const superagent = require('superagent');
 
 app.use(cors());
 
+// WEATHER BUILD
 async function getWeatherHandler(request, response) {
 
   const lat = request.query.lat;
@@ -34,7 +35,31 @@ class Forecast {
   }
 }
 
+
+// MOVIE BUILD
+async function getMovieHandler(request, response) {
+  const cityName = request.query.title
+  const key = process.env.MOVIE_KEY;
+
+  const url = `https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${key}`;
+  const movieResponse = await superagent.get(url);
+  const movieObject = JSON.parse(movieResponse.text);
+  const movieArray = movieObject.results;
+
+  const movie = movieArray.map(day => new Movies (movie));
+
+  response.send(movie);
+}
+
+class Movies {
+  constructor(day) {
+    this.title = movie.title
+  }
+}
+
 app.get('/weather', getWeatherHandler);
+
+app.get('/movie', getMovieHandler);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
