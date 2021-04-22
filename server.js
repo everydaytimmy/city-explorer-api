@@ -38,7 +38,7 @@ class Forecast {
 
 // MOVIE BUILD
 async function getMovieHandler(request, response) {
-  const cityName = request.query.title
+  const cityName = request.query.searchQuery;
   const key = process.env.MOVIE_KEY;
 
   const url = `https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${key}`;
