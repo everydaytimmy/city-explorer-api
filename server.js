@@ -56,7 +56,7 @@ class Movies {
   constructor(movie) {
     this.title = movie.title,
     this.overview= movie.overview
-    this.populatiry= movie.popularity
+    this.popularity= movie.popularity
   }
 }
 
