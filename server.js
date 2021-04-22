@@ -38,22 +38,25 @@ class Forecast {
 
 // MOVIE BUILD
 async function getMovieHandler(request, response) {
-  const cityName = request.query.searchQuery;
   const key = process.env.MOVIE_KEY;
-
+  const title = request.query.searchQuery;
+  console.log(key);
+  console.log(title);
   const url = `https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${key}`;
   const movieResponse = await superagent.get(url);
   const movieObject = JSON.parse(movieResponse.text);
   const movieArray = movieObject.results;
 
-  const movie = movieArray.map(day => new Movies (movie));
+  const movie = movieArray.map(movie => new Movies (movie));
 
   response.send(movie);
 }
 
 class Movies {
-  constructor(day) {
-    this.title = movie.title
+  constructor(movie) {
+    this.title = movie.title,
+    this.overview= movie.overview
+    this.populatiry= movie.popularity
   }
 }
 
